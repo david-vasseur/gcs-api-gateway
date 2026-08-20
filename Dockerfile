@@ -19,7 +19,7 @@ WORKDIR /usr/src/app
 COPY --chown=node:node --from=builder /usr/src/app/dist ./dist
 COPY --chown=node:node --from=builder /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=builder /usr/src/app/package.json ./package.json
-COPY --chown=node:node --from=builder /usr/src/app/src/gcs/gcs-key.json ./dist/src/gcs/gcs-key.json
+COPY --chown=node:node --from=builder /usr/src/app/gcs-key.json ./gcs-key.json
 
 # Mode rootless
 RUN groupadd -g 1003 nodejs && \
