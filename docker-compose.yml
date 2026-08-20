@@ -1,0 +1,16 @@
+services:
+  gcs-api-gateway:
+    build: .
+    container_name: gcs-api-gateway
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - nginx-network
+      - gcs-api-gateway-network
+
+networks:
+  nginx-network:
+    external: true
+  gcs-api-gateway-network:
+    external: true
